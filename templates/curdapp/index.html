@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{%block baseblock%}
+<body>
+<h1>Product Details</h1>
+<table border="1" style="border-collapse:collapse">
+    <thead>
+    <th border="2">Product Id</th>
+    <th border="2">Product Name</th>
+    <th border="2">Product Price</th>
+    <th border="2">Product Qnty</th>
+    <th border="2">Product Date</th>
+    </thead>
+    {%for p in prd%}
+    <tr>
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.qnty}}</td>
+        <td>{{p.date}}</td>
+        <td><a href="/update/{{p.id}}">Update</a>
+        <a href="/delete/{{p.id}}">Delete</a>
+        </td>
+    </tr>
+    {%endfor%}
+</table>
+</body>
+<br><br>
+<a href="/insert" class="btn btn-primary btn-lg">Insert</a>
+{%endblock%}
+</html>

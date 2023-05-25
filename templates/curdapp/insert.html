@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INSERT</title>
+</head>
+{%block baseblock%}
+<body>
+<h1>Product Insert Form</h1>
+<form method="POST">
+    <table border="1">
+        {{form}}
+    </table>
+    {%csrf_token%}
+    <br>
+    <input type="submit" class="btn btn-success btn-lg " value="submit">
+</form>
+</body>
+{%endblock%}
+</html>
